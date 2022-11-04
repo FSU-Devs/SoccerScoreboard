@@ -9,7 +9,7 @@ body{
     writing-mode: horizontal-tb;
     text-align: center;
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 4vw;
     color: white;
     
 
@@ -18,14 +18,24 @@ body{
 }
 
 #soccerField-img img{
-    width: 1000px;
+    position:absolute;
+    width: 90%;
+    height: 80%;
     text-align: center;
-    padding-top: 60px;
+    top: 15vh;
+    left: 5vw;
+    
 }
 
 
 #button-setup button{
     display: inline-block;
+    position: absolute;
+    bottom: 15vh;
+    right:0;
+    left:0;
+    margin-left:auto;
+    margin-right:auto;
     border-radius: 12px;
     background-color: red;
     border: none;
@@ -36,7 +46,7 @@ body{
     width: 200px; 
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
+    
     
 }
 
@@ -70,6 +80,22 @@ body{
 
 
 #soccerball-images img{
-    width: 175px;
-    padding-left: 300px;
+    position: absolute;
+    top: 2vh;
+    left: 5%;
+    max-width: 10vw;
+    max-height: 10vh;
+    height: auto;   
+
+}
+
+
+#soccerball-images-two img{
+    position: absolute;
+    top: 2vh;
+    right: 5%;
+    max-width: 10vw;
+    max-height: 10vh;
+    height: auto;   
+
 }
