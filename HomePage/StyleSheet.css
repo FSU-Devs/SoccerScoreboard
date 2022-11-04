@@ -5,13 +5,17 @@ body{
 }
 
 #title-block h1{
-    
+    background-color: red;
+    border-radius: 8px;
     writing-mode: horizontal-tb;
     text-align: center;
     text-transform: uppercase;
-    font-size: 4vw;
+    font-size: 3vw;
     color: white;
-    
+    border:none;
+    margin-left:auto;
+    margin-right:auto;
+    width: 65%;
 
     
     
