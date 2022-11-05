@@ -1,7 +1,15 @@
 
 body{
     background-color: grey;
-    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 995px;
+    background-image: url('Images/soccerField.png');
 }
 
 #title-block h1{
@@ -21,15 +29,6 @@ body{
     
 }
 
-#soccerField-img img{
-    position:absolute;
-    width: 90%;
-    height: 80%;
-    text-align: center;
-    top: 15vh;
-    left: 5vw;
-    
-}
 
 
 #button-setup button{
@@ -85,7 +84,7 @@ body{
 
 #soccerball-images img{
     position: absolute;
-    top: 2vh;
+    top: 5vh;
     left: 5%;
     max-width: 10vw;
     max-height: 10vh;
@@ -96,12 +95,16 @@ body{
 
 #soccerball-images-two img{
     position: absolute;
-    top: 2vh;
+    top: 5vh;
     right: 5%;
     max-width: 10vw;
     max-height: 10vh;
     height: auto;   
+}
 
+#soccerteam img{
+    display: flex;
+    justify-content: center;
 }
 
 /*Here is the code to design the scoreboard for the 
