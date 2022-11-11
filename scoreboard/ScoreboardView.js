@@ -22,6 +22,8 @@
 					<button class="scoreboard__control-button">+</button>
 				</div>
 			</div>
+
+			
 		`;
 
 		this.root.querySelectorAll(".scoreboard__control-button").forEach(controlButton => {

@@ -5,8 +5,7 @@
 
 //need to import the scoreboard
 import ScoreboardView from "./scoreboard/ScoreboardView.js";
-
-
+import Timer from "./scoreboard/Timer.js";
 let playerOneScore = 0;
 let playerTwoScore = 0;
 const root = document.querySelector("#app");

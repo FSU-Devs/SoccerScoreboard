@@ -1,6 +1,7 @@
 
 body{
     background-color: grey;
+    margin: 24px;
     display: block;
     width: 100vw;
     height: 100vh;
@@ -142,7 +143,7 @@ body{
 .scoreboard{
     display: grid;
     grid-template-columns: 1fr 1fr; /* repeat(2, 1fr) is the same as 1fr 1fr*/
-    width: 350px;
+    width: 450px;
     font-family:'Times New Roman', sans-serif;
     font-size: medium;
     background-color: #444;
@@ -210,3 +211,49 @@ tags */
     background: #ccc;
 }
 
+
+
+/*
+* Here will be the styling for the timer
+*
+*/
+
+.timer{
+    font-family: sans-serif;
+    display: inline-block; /*Will insure it will not take up the entire width of the page*/
+    padding: 24px 32px;
+    border-radius: 30px;
+    background: lightgrey;
+}
+
+
+/*this part we are targetting the timer parts, so the minute and sec part*/
+
+.timer__part{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.timer__btn{
+    width: 50px;
+    height: 50px;
+    margin-left: 16px; /*gives us space between the icon and next one */
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: purple;
+    cursor: pointer;
+}
+
+
+/*change for the start button*/
+
+.timer__btn--start{
+    background: limegreen;
+
+}
+
+/*change for the stop button now*/
+.timer__btn--stop{
+    background: red;
+}
