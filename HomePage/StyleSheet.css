@@ -147,6 +147,7 @@ body{
     font-family:'Times New Roman', sans-serif;
     font-size: medium;
     background-color: #444;
+    transform: scale(1.4);
 }
 
 
@@ -224,6 +225,9 @@ tags */
     padding: 24px 32px;
     border-radius: 30px;
     background: lightgrey;
+    position: relative;
+    top: 25px;
+    left: 15px;
 }
 
 
