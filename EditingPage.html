@@ -15,12 +15,6 @@ board-->
 	<div id= "app"></div>
 	<script src="Main.js" type="module"></script>
 
-	<!--<div id = "title-block">
-		<h1>
-			Soccer Scoreboard <br>Generator
-		</h1>
-	</div> -->
-
 	<div id="soccerball-images">
 		<img src="Homepage/Images/soccerBall.png"/>
 	</div>
@@ -40,14 +34,17 @@ board-->
 
 	<!--Here we will get the user input for the 
 		edits and then make the edits stick -->
+		
+		<div id="finish-button">
+			<a href="/inProgress.html"><button onclick="disableElement()"> Finish editing </button></a>
 	
-		<!--
-	<div id="finish-button">
-	<form>
-		<input style="vertical-align:middle" type="button" value="Finish Edit">
-	</form>
-	</div>
--->
+			<!--Now we add some JS here within the script tags-->
+			<script>
+				function disableElement() {
+					document.getElementById("btn01").disabled = true;
+				}
+			</script>
+		</div>
 
 <!--Here we will begin the code for creating the timer, the code below
 will be the main container -->
