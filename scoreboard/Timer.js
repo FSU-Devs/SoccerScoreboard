@@ -8,14 +8,15 @@ export default class Timer{
             minutes: root.querySelector(".timer__part--minutes"),
             seconds: root.querySelector(".timer__part--seconds"),
             control: root.querySelector(".timer__btn--control"),
-            reset: root.querySelector(".timer__btn--reset")
-
+            reset: root.querySelector(".timer__btn--reset"),
+            halves: root.querySelector(".timer__part--halves")
 
         };
 
         this.interval = null;
         this.remainingSeconds = 0;
 
+        //This is to operate the start button 
         this.el.control.addEventListener("click", () => {
             if (this.interval === null) {
                 this.start();
@@ -24,14 +25,17 @@ export default class Timer{
               }
         });
 
+        //This process is so that we will be able to set the clock time
         this.el.reset.addEventListener("click", () => {
             const inputMinutes = prompt("Enter the number of minutes:");
-
+        
             if (inputMinutes < 60) {
                 this.stop();
                 this.remainingSeconds = inputMinutes * 60;
                 this.updateInterfaceTime();
             }
+        
+
         });
     }
 
@@ -48,6 +52,14 @@ export default class Timer{
 
     }
 
+    /** 
+    //Here we will try to create the update for the half/quarter part
+    //I may just add it into the code part for update interface instead
+    updateInterfaceHalves(){
+        const qtr = 
+    }
+    */
+
     //this interface is refering to the start and the stop button
 
     updateInterfaceControls(){
@@ -57,7 +69,7 @@ export default class Timer{
             this.el.control.classList.remove("timer__btn--stop");
 
         } else {
-            this.el.control.innerHTML = `<span class="material-icons">pause</span>`;
+            this.el.control.innerHTML = `<span class="material-icons">pause</span>`; //this part makes the pause button icon
             this.el.control.classList.add("timer__btn--stop");
             this.el.control.classList.remove("timer__btn--start");
 
@@ -70,13 +82,14 @@ export default class Timer{
         this.interval = setInterval(() => {
             this.remainingSeconds--;
             this.updateInterfaceTime();
-
+    
             if(this.remainingSeconds === 0){
                 this.stop();
             }
         }, 1000);//this allows us to run code on a timer
 
         this.updateInterfaceControls();
+        this.decrement();
     }
 
     stop() { 
@@ -84,14 +97,28 @@ export default class Timer{
 
         this.interval = null;
 
+        this.halves--;
+
         this.updateInterfaceControls();
     }
 
+    decrement(){
+        this.interval = setInterval(() => {
+
+            if(this.remainingSeconds === 0 && this.halves >= 2){
+                this.halves--;
+                this.stop();
+            }
+
+        });
+    }
     static getHTML(){
         return `
 		<span class="timer__part timer__part--minutes">00</span>
 		<span class="timer__part">:</span>
 		<span class="timer__part timer__part--seconds">00</span>
+        <span class="timer__part">|</span>
+        <span class="timer__part--halves">2</span>
 
 		<button type="button" class="timer__btn timer__btn--control timer__btn--start">
 			<span class="material-icons">play_arrow</span>

@@ -22,14 +22,17 @@ body{
     color: white;
     margin-left:auto;
     margin-right:auto;
-    width: 40%;
+    width: 70%;
     height:15%;
-    top: 2%;
+    max-width: 50%;
+    max-height: 15%;
+   
     
     
 }
 
 
+/*this is all for the going to the editing page button */
 
 #button-setup button{
     display: inline-block;
@@ -50,6 +53,7 @@ body{
     height: 12%; 
     transition: all 0.5s;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 #button-setup button span{
@@ -79,8 +83,114 @@ body{
     right: 0;
 }
 
+/*This button is for users who may have just came on to the site by searching it or 
+ via link, and wants to see what games are currently in progress */
+ #see-games{
+    display: inline-block;
+    position: absolute;
+    bottom: 2vh;
+    right:0;
+    left:0;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 12px;
+    background-color: red;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 1.5vw;
+    padding: 1%;
+    width: 10%;
+    height: 5%; 
+    transition: all 0.5s;
+    cursor: pointer;
+    text-transform: uppercase;
+ }
+
+ #see-games button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#see-games button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
 
 
+#see-games button:hover span{
+    padding-right: 25px;
+}
+
+
+#see-games button:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+
+/*This is to design the back button (so it can go back
+to the home page */
+#button-back button{
+    display: inline-block;
+    position: absolute;
+    bottom: 5vh;
+    left:0;
+    right:66%;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 12px;
+    background-color: red;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 10%; 
+    transition: all 0.5s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#button-back button:hover{
+    background-color: darkgrey;
+    color: black;
+}
+
+
+/*this is for the finish editing animation/design*/
+#finish-button button{
+    display: inline-block;
+    position: absolute;
+    bottom: 5vh;
+    right:0;
+    left:66%;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 12px;
+    background-color: red;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 10%; 
+    transition: all 0.5s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#finish-button button:hover{
+    background-color: darkgrey;
+    color: black;
+}
+
+/*the next two stylings is for the soccer ball images */
 #soccerball-images img{
     position: absolute;
     top: 2vh;
@@ -101,6 +211,8 @@ body{
     height: auto;   
 }
 
+/*this styling code (below) is for the soccer team
+image */
 #soccerteam img{
     position: absolute;
     top: 25vh;
@@ -117,25 +229,7 @@ body{
     justify-content: center;
 }
 
-#button-back button{
-    display: inline-block;
-    position: absolute;
-    bottom: 5vh;
-    right:0;
-    left:80%;
-    margin-left:auto;
-    margin-right:auto;
-    border-radius: 12px;
-    background-color: red;
-    border: none;
-    color: white;
-    text-align: center;
-    font-size: 10px;
-    padding: 10px;
-    width: 100px; 
-    transition: all 0.5s;
-    cursor: pointer;
-}
+
 
 /*Here is the code to design the scoreboard for the 
 "EditingPage.html" page */
@@ -167,6 +261,7 @@ the scoreboard */
 .scoreboard__name{
     font-weight: bold;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
 
 
@@ -174,11 +269,15 @@ the scoreboard */
 tags */
 
 .scoreboard__name--one{
+   
     color: red;
+    
 }
 
 .scoreboard__name--two{
+
     color: rgb(47, 124, 240);
+    
 }
 
 
@@ -225,9 +324,12 @@ tags */
     padding: 24px 32px;
     border-radius: 30px;
     background: lightgrey;
-    position: relative;
-    top: 25px;
-    left: 15px;
+    position: absolute;
+    top: 70vh;
+    right: 39%;
+    max-width: 30vw;
+    max-height: 30vh;
+    height: auto;
 }
 
 
@@ -261,3 +363,32 @@ tags */
 .timer__btn--stop{
     background: red;
 }
+
+/*for the halves part */
+.timer__part--halves{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/*here we are editing the share button*/
+.share__btn {
+    width: 50px;
+    height: 50px;
+   /* margin-left: 16px;*/ /*gives us space between the icon and next one */
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background: black;
+    cursor: pointer;
+    position: absolute;
+    top: 75vh;
+    left: 37%;
+    
+}
+
+.share__btn:hover{
+    background-color: lightgrey;
+    color: black;
+}
+
+

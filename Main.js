@@ -8,8 +8,10 @@ import ScoreboardView from "./scoreboard/ScoreboardView.js";
 import Timer from "./scoreboard/Timer.js";
 let playerOneScore = 0;
 let playerTwoScore = 0;
+let playerOneName = null;
+let playerTwoName = null;
 const root = document.querySelector("#app");
-const view = new ScoreboardView(root, "Player One", "Player Two", (player, direction) => {
+const view = new ScoreboardView(root, "Team one name", "Team two name", (player, direction) => {
 	const difference = direction === "minus" ? -1 : 1;
 
 	if (player === "one") {
@@ -17,6 +19,15 @@ const view = new ScoreboardView(root, "Player One", "Player Two", (player, direc
 	} else {
 		playerTwoScore = Math.max(playerTwoScore + difference, 0);
 	}
-
 	view.update(playerOneScore, playerTwoScore);
+
+	//I need to figure this part out in order to change the name for both
+	// of the teams name, by actually clicking on the teams name and not the 
+	// buttons
+	
+		playerOneName = prompt("Please enter the name for team one: ");
+		playerTwoName = prompt("Please enter the name for team two: ");
+
+	
+	view.updateName(playerOneName, playerTwoName);
 });
