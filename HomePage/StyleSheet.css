@@ -185,13 +185,11 @@ to the home page */
     text-transform: uppercase;
 }
 
-<<<<<<< HEAD
 #finish-button button:hover{
     background-color: darkgrey;
     color: black;
 }
 
-=======
 /*This is to design the back button (so it can go back
 to the home page */
 #button-back button{
@@ -248,7 +246,6 @@ to the home page */
     color: black;
 }
 
->>>>>>> b710f7ce9c2d429d79732c2d405310aa25307ae4
 /*the next two stylings is for the soccer ball images */
 #soccerball-images img{
     position: absolute;
@@ -334,11 +331,7 @@ tags */
 }
 
 .scoreboard__name--two{
-<<<<<<< HEAD
-
-=======
    
->>>>>>> b710f7ce9c2d429d79732c2d405310aa25307ae4
     color: rgb(47, 124, 240);
     
 }
@@ -389,7 +382,7 @@ tags */
     background: lightgrey;
     position: absolute;
     top: 70vh;
-    right: 39%;
+    right: 41%;
     max-width: 30vw;
     max-height: 30vh;
     height: auto;
