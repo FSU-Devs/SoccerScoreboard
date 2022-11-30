@@ -111,9 +111,11 @@ font-weight:700
     margin-right:auto;
     width:6%;
     height:7%;
-    border-radius:8px;
+    border-radius:12px;
+    border: none;
     background-color:red;
-    color:#fff;
+    color:white;
+    font-size: 15px;
     font-size:100%;
     cursor:pointer;
     text-transform: uppercase;
@@ -130,10 +132,11 @@ font-weight:700
     margin-right:auto;
     width:7%;
     height:7%;
-    border-radius:8px;
+    border-radius:12px;
+    border: none;
     background-color:red;
-    color:#fff;
-    font-size:100%;
+    color:white;
+    font-size: 15px;
     cursor:pointer;
     text-transform: uppercase;
 }
