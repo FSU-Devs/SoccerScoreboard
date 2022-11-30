@@ -22,19 +22,15 @@ const view = new ScoreboardView(root, "Team one name", "Team two name", (player,
 	view.update(playerOneScore, playerTwoScore);
 
 	//I need to figure this part out in order to change the name for both
-<<<<<<< HEAD
-	// of the teams name, by actually clicking on the teams name and not the 
-	// buttons
-	
-		playerOneName = prompt("Please enter the name for team one: ");
-		playerTwoName = prompt("Please enter the name for team two: ");
-=======
 	// of the teams name
 	
 		playerOneName = prompt("Please enter the team name: ");
+		if(playerOneName == null){
+			return;
+		}
 		playerTwoName = prompt("Please enter the team name: ");
->>>>>>> b710f7ce9c2d429d79732c2d405310aa25307ae4
-
-	
-	view.updateName(playerOneName, playerTwoName);
+		if(playerTwoName == null){
+			return;
+		}
+		view.updateName(playerOneName, playerTwoName);
 });
