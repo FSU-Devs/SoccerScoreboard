@@ -85,10 +85,10 @@ body{
 
 /*This button is for users who may have just came on to the site by searching it or 
  via link, and wants to see what games are currently in progress */
- #see-games{
+ #see-games button{
     display: inline-block;
     position: absolute;
-    bottom: 2vh;
+    bottom: 2.8vh;
     right:0;
     left:0;
     margin-left:auto;
@@ -98,10 +98,10 @@ body{
     border: none;
     color: white;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1vw;
     padding: 1%;
     width: 10%;
-    height: 5%; 
+    height: 7%; 
     transition: all 0.5s;
     cursor: pointer;
     text-transform: uppercase;
