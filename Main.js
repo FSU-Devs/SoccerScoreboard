@@ -8,8 +8,21 @@ import ScoreboardView from "./scoreboard/ScoreboardView.js";
 import Timer from "./scoreboard/Timer.js";
 let playerOneScore = 0;
 let playerTwoScore = 0;
-let playerOneName = "Team One Name";
-let playerTwoName = "Team Two Name";
+let playerOneName;
+let playerTwoName;
+
+// localStorage lets the names of the teams carry between html pages
+if(document.URL.includes("inProgress.html")){
+	playerOneName = localStorage.getItem('playerOneName');
+	playerTwoName = localStorage.getItem('playerTwoName');
+}
+else{
+	playerOneName = "Team One Name";
+	playerTwoName = "Team Two Name";
+	localStorage.setItem('playerOneName', playerOneName);
+	localStorage.setItem('playerTwoName', playerTwoName);
+}
+
 const root = document.querySelector("#app");
 const view = new ScoreboardView(root, playerOneName, playerTwoName, (player, direction) => {
 	const difference = direction === "minus" ? -1 : 1;
@@ -22,10 +35,12 @@ const view = new ScoreboardView(root, playerOneName, playerTwoName, (player, dir
 		if(playerOneName == null || playerOneName == ""){
 			return;
 		}
+		localStorage.setItem('playerOneName', playerOneName);
 		playerTwoName = prompt("Please enter the team name for #2");
 		if(playerTwoName == null || playerTwoName == ""){
 			return;
 		}
+		localStorage.setItem('playerTwoName', playerTwoName);
 		view.updateName(playerOneName, playerTwoName)
 	}
 	else{
