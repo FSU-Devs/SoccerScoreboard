@@ -12,9 +12,17 @@ export default class Timer{
             halves: root.querySelector(".timer__part--halves")
 
         };
-
-        this.interval = null;
-        this.remainingSeconds = 0;
+        if(document.URL.includes("EditingPage.html")){
+            this.interval = null;
+            this.remainingSeconds = 0;
+        }
+        else{
+            this.interval = null;
+            this.remainingSeconds = localStorage.getItem("remainingSeconds");
+            this.updateInterfaceTime();
+            // need to set it back to zero after construction so the value doesn't carry over to future sessions
+            localStorage.setItem("remainingSeconds", 0);
+        }
 
         //This is to operate the start button 
         this.el.control.addEventListener("click", () => {
@@ -34,11 +42,11 @@ export default class Timer{
             if (inputMinutes < 60) {
                 this.stop();
                 this.remainingSeconds = inputMinutes * 60;
+                localStorage.setItem("remainingSeconds", this.remainingSeconds);
                 this.updateInterfaceTime();
             }
-            localStorage.setItem('inputMinutes', inputMinutes);
         } else {
-           //maybe do nothing (not sure yet)
+            // do nothing
         }
         
 
@@ -86,22 +94,22 @@ export default class Timer{
        if(document.URL.includes("EditingPage.html")){
              //do nothing 
         } else {
-        if(this.remainingSeconds === 0) return;
+            if(this.remainingSeconds === 0) return;
 
-        this.interval = setInterval(() => {
-            this.remainingSeconds--;
-            this.updateInterfaceTime();
-    
-            if(this.remainingSeconds === 0){
-                this.stop();
+            this.interval = setInterval(() => {
+                this.remainingSeconds--;
+                this.updateInterfaceTime();
+        
+                if(this.remainingSeconds === 0){
+                    this.stop();
+                }
+            }, 1000);//this allows us to run code on a timer
+
+            if(this.remainingSeconds === 0 && this.halves > 0){
+                this.el.halves--;
             }
-        }, 1000);//this allows us to run code on a timer
-
-        if(this.remainingSeconds === 0 && this.halves > 0){
-            this.el.halves--;
-        }
-        this.updateInterfaceControls();
-       // this.decrement();
+            this.updateInterfaceControls();
+        // this.decrement();
     }
 }
 
