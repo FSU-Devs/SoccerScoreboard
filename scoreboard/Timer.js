@@ -27,13 +27,19 @@ export default class Timer{
 
         //This process is so that we will be able to set the clock time
         this.el.reset.addEventListener("click", () => {
+        if(document.URL.includes("EditingPage.html")){
+
             const inputMinutes = prompt("Enter the number of minutes:");
-        
+
             if (inputMinutes < 60) {
                 this.stop();
                 this.remainingSeconds = inputMinutes * 60;
                 this.updateInterfaceTime();
             }
+            localStorage.setItem('inputMinutes', inputMinutes);
+        } else {
+           //maybe do nothing (not sure yet)
+        }
         
 
         });
@@ -77,6 +83,9 @@ export default class Timer{
     }
 
     start(){//will start the timer
+       if(document.URL.includes("EditingPage.html")){
+             //do nothing 
+        } else {
         if(this.remainingSeconds === 0) return;
 
         this.interval = setInterval(() => {
@@ -88,9 +97,13 @@ export default class Timer{
             }
         }, 1000);//this allows us to run code on a timer
 
+        if(this.remainingSeconds === 0 && this.halves > 0){
+            this.el.halves--;
+        }
         this.updateInterfaceControls();
-        this.decrement();
+       // this.decrement();
     }
+}
 
     stop() { 
         clearInterval(this.interval);

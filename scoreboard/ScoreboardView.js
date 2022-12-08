@@ -32,11 +32,14 @@
 			controlButton.addEventListener("click", () => {
 				const direction = controlButton.textContent === "-" ? "minus" : "plus";
 				const player = controlButton.closest(".scoreboard__controls").dataset.forPlayer;
-
+			if(document.URL.includes("EditingPage.html")){
+				//onControlButtonClick(player, direction);
+			} else {
 				onControlButtonClick(player, direction);
+			}
+				
 			});
 		});
-
 
 		//this part is for getting the names
 		this.root.querySelectorAll(".scoreboard__name").forEach(playerName => {
@@ -44,7 +47,12 @@
 				const player1 = playerName.closest(".scoreboard__name").dataset.forPlayer;
 				const player2 = playerName.closest(".scoreboard__name").dataset.forPlayer;
 
-				onClick(player1, player2);
+			if(document.URL.includes("inProgress.html")){
+				//onControlButtonClick(player1, player2);
+			} else{
+				onControlButtonClick(player1, player2);
+			}
+				
 			});
 		});
 		
