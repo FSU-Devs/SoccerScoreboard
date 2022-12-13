@@ -15,13 +15,19 @@ export default class Timer{
         if(document.URL.includes("EditingPage.html")){
             this.interval = null;
             this.remainingSeconds = 0;
+            //may need to add another main thing, being something like
+            this.remainingHalves = 0;
         }
         else{
             this.interval = null;
             this.remainingSeconds = localStorage.getItem("remainingSeconds");
+            this.remainingHalves = localStorage.getItem("remainingHalves");
+
             this.updateInterfaceTime();
             // need to set it back to zero after construction so the value doesn't carry over to future sessions
             localStorage.setItem("remainingSeconds", 0);
+            //may need to also do the same for remainingHalves, which is
+            localStorage.setItem("remainingHalves", 0);
         }
 
         //This is to operate the start button 
@@ -37,7 +43,7 @@ export default class Timer{
         this.el.reset.addEventListener("click", () => {
         if(document.URL.includes("EditingPage.html")){
 
-            const inputMinutes = prompt("Enter the number of minutes:");
+            const inputMinutes = prompt("Please enter the number of minutes:");
 
             if (inputMinutes < 60) {
                 this.stop();
@@ -45,13 +51,22 @@ export default class Timer{
                 localStorage.setItem("remainingSeconds", this.remainingSeconds);
                 this.updateInterfaceTime();
             }
-        } else {
+
+            //here is where we will place the other if statement for the halves part
+            const inputHalves = prompt("Please enter the amount of halves/quarters:");
+            if (inputHalves > 0){
+                this.stop();
+                this.remainingHalves = inputHalves * 1;
+                localStorage.setItem("remainingHalves", this.remainingHalves);
+                this.updateInterfaceTime();
+            }
+        }else {
             // do nothing
         }
         
 
         });
-    }
+    } // the end of the constructor 
 
 
     //this code will update the interface time 
@@ -60,19 +75,17 @@ export default class Timer{
         const minutes = Math.floor(this.remainingSeconds / 60);
         const seconds = this.remainingSeconds % 60;
 
+        //here we make the "const" for halves, which may look like:
+        const halves = this.remainingHalves / 1;  //I place divide by 1 because if someone enters less than one
+        //then it will not go through 
 
         this.el.minutes.textContent = minutes.toString().padStart(2, "0");
         this.el.seconds.textContent = seconds.toString().padStart(2, "0");
-
+        //Here, we can do something like:
+        this.el.halves.textContent = halves;
     }
 
-    /** 
-    //Here we will try to create the update for the half/quarter part
-    //I may just add it into the code part for update interface instead
-    updateInterfaceHalves(){
-        const qtr = 
-    }
-    */
+    
 
     //this interface is refering to the start and the stop button
 
@@ -91,55 +104,58 @@ export default class Timer{
     }
 
     start(){//will start the timer
-       if(document.URL.includes("EditingPage.html")){
+      if(document.URL.includes("EditingPage.html")){
              //do nothing 
         } else {
-            if(this.remainingSeconds === 0) return;
+            if(this.remainingSeconds == 0) return;
 
+            //this decrements the remaining time that is left
             this.interval = setInterval(() => {
                 this.remainingSeconds--;
                 this.updateInterfaceTime();
         
-                if(this.remainingSeconds === 0){
+            //when the time updates to zero, then this command should
+            //activate
+                if(this.remainingSeconds == 0){
+                    this.remainingHalves--;
                     this.stop();
                 }
             }, 1000);//this allows us to run code on a timer
 
-            if(this.remainingSeconds === 0 && this.halves > 0){
-                this.el.halves--;
-            }
+           
+            //this.remainingHalves--;
             this.updateInterfaceControls();
-        // this.decrement();
+           
     }
 }
 
     stop() { 
+
         clearInterval(this.interval);
 
         this.interval = null;
 
-        this.halves--;
-
         this.updateInterfaceControls();
+
+        this.remainingHalves--;
     }
 
+    //this method is supposed to help decrement the quarters
+    //section on the timeer/clock, but it seems to have a delay
     decrement(){
-        this.interval = setInterval(() => {
+        this.remainingHalves--;
+        
+        this.interval = null;
 
-            if(this.remainingSeconds === 0 && this.halves >= 2){
-                this.halves--;
-                this.stop();
-            }
-
-        });
     }
+
     static getHTML(){
         return `
 		<span class="timer__part timer__part--minutes">00</span>
 		<span class="timer__part">:</span>
 		<span class="timer__part timer__part--seconds">00</span>
         <span class="timer__part">|</span>
-        <span class="timer__part--halves">2</span>
+        <span class="timer__part--halves">0</span>
 
 		<button type="button" class="timer__btn timer__btn--control timer__btn--start">
 			<span class="material-icons">play_arrow</span>
