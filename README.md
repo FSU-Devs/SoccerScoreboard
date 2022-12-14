@@ -13,6 +13,7 @@ We intend for one parent (the "administrator") to create an "instance" of their 
 The homepage directory includes the images that we used, the homepage html, and the styles.
 The scoreboard directory includes the javascript for creating the scoreboard, and the javascript for creating the timer.
 The urlEmailTo directory includes the code for creating a unique link and sending it out via email.
+The node modules are used to send emails via our application.
 EditingPage.html is the page that shows up when you click "Create scoreboard".
 Main.js sets the functionality of the scoreboard. Including changing the team names and the score.
 inProgress.html is the page where the game is played (i.e. the clock runs down and the scores can be changed).
