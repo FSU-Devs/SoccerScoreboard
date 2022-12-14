@@ -55,7 +55,7 @@ export default class Timer{
             }
 
             //here is where we will place the other if statement for the halves part
-            const inputHalves = prompt("Please enter the amount of halves/quarters:");
+            const inputHalves = prompt("Please enter the amount of play periods:");
             if (inputHalves > 0){
                 this.stop();
                 this.remainingHalves = inputHalves * 1;
