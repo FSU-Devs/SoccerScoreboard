@@ -61,11 +61,14 @@ const difference = direction === "minus" ? -1 : 1;
 		view.updateName(playerOneName, playerTwoName)
 	}
 	else{
-		if (player === "one") {
-			playerOneScore = Math.max(playerOneScore + difference, 0);
-		} else {
-			playerTwoScore = Math.max(playerTwoScore + difference, 0);
+		let endCheck = document.getElementById("ending-game").textContent;
+		if(endCheck != "Game  Over!"){
+			if (player === "one") {
+				playerOneScore = Math.max(playerOneScore + difference, 0);
+			} else {
+				playerTwoScore = Math.max(playerTwoScore + difference, 0);
+			}
+			view.update(playerOneScore, playerTwoScore);	
 		}
-		view.update(playerOneScore, playerTwoScore);	
 	}
 });

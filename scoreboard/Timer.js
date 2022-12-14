@@ -20,7 +20,9 @@ export default class Timer{
         }
         else{
             this.interval = null;
-            this.remainingSeconds = localStorage.getItem("remainingSeconds");
+            // need a second variable called "beginningSeconds" that is held constant to remember what the timer starts at 
+            // helps when decreasing the halves/quarters
+            this.beginningSeconds = this.remainingSeconds = localStorage.getItem("remainingSeconds");
             this.remainingHalves = localStorage.getItem("remainingHalves");
 
             this.updateInterfaceTime();
@@ -117,9 +119,23 @@ export default class Timer{
             //when the time updates to zero, then this command should
             //activate
                 if(this.remainingSeconds == 0 && this.remainingHalves > 0){
-                    this.remainingHalves--;
-                    this.updateInterfaceTime();
                     this.stop();
+                    // make the quarters subtract 1
+                    this.remainingHalves--;
+                    // reset the timer
+                    this.remainingSeconds = this.beginningSeconds;
+                    this.updateInterfaceTime();
+                }
+                // this runs when the game "ends"
+                if(this.remainingHalves == 0){
+                    // stop the clock for good and set the remaining seconds to zero
+                    this.remainingSeconds = 0;
+                    this.stop();
+                    this.updateInterfaceTime();
+
+                    // update title block to say "game over"
+                    // disable scoreboard
+                    document.getElementById("ending-game").innerHTML = "Game <br> Over!";
                 }
             }, 1000);//this allows us to run code on a timer
 
