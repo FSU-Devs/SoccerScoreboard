@@ -6,7 +6,7 @@ const linkMap = new Map();
 
 function generateLink(){
     date = new Date();
-    baseURL = 'https://www.soccerScoreboard.com/inProgress/';
+    baseURL = 'https://www.peeweesoccerScoreboard.com/inProgress/';
     link = Math.floor(Math.random() * 10000 + 1);
     extension= `${link}.html`;
     fullLink = new URL(extension, baseURL)
@@ -19,7 +19,7 @@ function generateLink(){
 
 function generateLink2(){
     date = new Date();
-    baseURL = 'https://www.soccerScoreboard.com/inProgress/';
+    baseURL = 'https://www.peeweesoccerScoreboard.com/inProgress/';
     link = Math.floor(Math.random() * 10000 + 1);
     extension= `${link}.html`;
     fullLink = new URL(extension, baseURL)
@@ -30,7 +30,7 @@ function generateLink2(){
 
 function generateLink3(){
     date = new Date();
-    baseURL = 'https://www.soccerScoreboard.com/inProgress/';
+    baseURL = 'https://www.peeweesoccerScoreboard.com/inProgress/';
     link = Math.floor(Math.random() * 10000 + 1);
     extension= `${link}.html`;
     fullLink = new URL(extension, baseURL)
