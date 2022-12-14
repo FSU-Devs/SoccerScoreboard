@@ -132,6 +132,10 @@ export default class Timer{
                     this.remainingSeconds = 0;
                     this.stop();
                     this.updateInterfaceTime();
+
+                    // update title block to say "game over"
+                    // disable scoreboard
+                    document.getElementById("ending-game").innerHTML = "Game <br> Over!";
                 }
             }, 1000);//this allows us to run code on a timer
 
