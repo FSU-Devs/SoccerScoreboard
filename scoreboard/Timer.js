@@ -125,8 +125,13 @@ export default class Timer{
                     // reset the timer
                     this.remainingSeconds = this.beginningSeconds;
                     this.updateInterfaceTime();
-                    // resume play
-                    this.start();
+                }
+                // this runs when the game "ends"
+                if(this.remainingHalves == 0){
+                    // stop the clock for good and set the remaining seconds to zero
+                    this.remainingSeconds = 0;
+                    this.stop();
+                    this.updateInterfaceTime();
                 }
             }, 1000);//this allows us to run code on a timer
 
