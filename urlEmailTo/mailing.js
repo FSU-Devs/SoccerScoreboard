@@ -35,10 +35,10 @@ const nodemailer = require('nodemailer');
         auth: {
             type: 'OAuth2',
             user: "dhmason15@gmail.com", //my email
-            clientId: "888235337339-3ki8l27vkk26a2i176e8rpokpis2s98v.apps.googleusercontent.com", //oauth client id
-            clientSecret: "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", //secret
-            refreshToken: "1//04-s_Va8G5JZUCgYIARAAGAQSNwF-L9IrAuvYVEj7bjjW9rLgWSX8Hxf8NBMhjTtXeKje3tAyT1dKNT9tsB87O81Kvq-nOKy1dxs", //refresh token
-            accessToken: "ya29.a0AeTM1ieN9-ffTCmlAx_DvzgtnMLW3H3wP0thgBQcOu5bbXG6UaXRNLxd9v89oa01ZLckJx7EcR5PH0FbXI39HD8XtKwVZZ2IDcoOntTMGNRArf4ehD104zP5TPgD6qxblpVtu5wVdyFrosQ33oX7SGgl4j7EaCgYKAVkSARMSFQHWtWOmO1cHUGTM8BKSBvqO3WItjg0163" // access token
+            clientId: "xxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com", //oauth client id
+            clientSecret: "xxxxxxx-xxxxxxx-xxxxxxxxxxxxx", //secret
+            refreshToken: "1//04-s_xxxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxx", //refresh token
+            accessToken: "yaxx.xxxxxxxxxxxx-xxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // access token
         },
        debug: true, //show debug output
         logger: true // log info in console
