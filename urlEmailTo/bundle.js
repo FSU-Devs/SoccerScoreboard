@@ -52880,17 +52880,17 @@ window.check_empty = function() {
             
         //Creating the transporter
         let transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port:465,
-            secure: true,
-            auth: {
-                type: 'OAuth2',
-                user: "dhmason15@gmail.com", //my email
-                clientId: "8xxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com", //oauth client id
-                clientSecret: "XXXXXXXX-xxxxxxxxxxxxxxxxxxx", //secret
-                refreshToken: "1//04-x_xxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxx", //refresh token
-                accessToken: "ya29.xxxxxxxxxxxxx-xxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // access token
-            },
+          host: 'smtp.gmail.com',
+          port:465,
+          secure: true,
+          auth: {
+              type: 'OAuth2',
+              user: "dhmason15@gmail.com", //my email
+              clientId: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com", //oauth client id
+              clientSecret: "xxxxxx-xxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxx", //secret
+              refreshToken: "1//04-s_xxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxx", //refresh token
+              accessToken: "ya29.xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // access token
+          },
             //debug: true, //show debug output
             //logger: true // log info in console
         });
