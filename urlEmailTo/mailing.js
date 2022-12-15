@@ -40,8 +40,8 @@ const nodemailer = require('nodemailer');
             refreshToken: "1//04-s_Va8G5JZUCgYIARAAGAQSNwF-L9IrAuvYVEj7bjjW9rLgWSX8Hxf8NBMhjTtXeKje3tAyT1dKNT9tsB87O81Kvq-nOKy1dxs", //refresh token
             accessToken: "ya29.a0AeTM1ieN9-ffTCmlAx_DvzgtnMLW3H3wP0thgBQcOu5bbXG6UaXRNLxd9v89oa01ZLckJx7EcR5PH0FbXI39HD8XtKwVZZ2IDcoOntTMGNRArf4ehD104zP5TPgD6qxblpVtu5wVdyFrosQ33oX7SGgl4j7EaCgYKAVkSARMSFQHWtWOmO1cHUGTM8BKSBvqO3WItjg0163" // access token
         },
-        //debug: true, //show debug output
-        //logger: true // log info in console
+       debug: true, //show debug output
+        logger: true // log info in console
     });
 
     //Send an email
